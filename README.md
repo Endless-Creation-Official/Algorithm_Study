@@ -6,8 +6,8 @@ Endless Creation 알고리즘 part 스터디 자료들 입니다. 자세한 내�
 ### 팀장
 1.  **김경태**
 - [solved.ac 링크](https://solved.ac/profile/kimgt0128) 
-- [블로그 링크](https://wondrous-developer.tistory.com/) 
-2. **박진홍**
+- [블로그 링크](https://wondrous-developer.tistory.com/category/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98) 
+1. **박진홍**
 - [solved.ac 링크](https://solved.ac/profile/com5942)
 - [블로그 링크](https://jiinhong.github.io/)
 ### 팀원
