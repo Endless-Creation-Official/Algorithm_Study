@@ -1,5 +1,6 @@
 # Algorithm_Study
-Endless Creation 알고리즘 part 스터디 자료들 입니다.
+Endless Creation 알고리즘 part 스터디 자료들 입니다. 자세한 내용은 노션 링크를 참고해 주세요
+[알고리즘 스터디 노션 기록](https://www.notion.so/3c5902e9697045a29f3ee08e20bbc236?pvs=4)
 
 # 팀명: 원리를 Algo 풀자
 ### 팀장
