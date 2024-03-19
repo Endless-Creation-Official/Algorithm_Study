@@ -71,6 +71,7 @@ int main(void) {
 	cout << ans;
 	return 0;
 }
+```  
 
 [백준 11501] [주식](https://www.acmicpc.net/problem/11501)
 
