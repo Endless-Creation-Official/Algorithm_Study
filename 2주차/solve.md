@@ -1,4 +1,4 @@
-[백준 11047\] [동전 0](https://www.acmicpc.net/problem/11047)
+[백준 11047] [동전 0](https://www.acmicpc.net/problem/11047)
 
 ```C++
 #include<iostream>
@@ -30,7 +30,7 @@ int main(void) {
   
 
 
-[백준 1931\] [회의실 배정](https://www.acmicpc.net/problem/1931)
+[백준 1931] [회의실 배정](https://www.acmicpc.net/problem/1931)
 
 ```C++
 #include<iostream>
@@ -71,3 +71,63 @@ int main(void) {
 	cout << ans;
 	return 0;
 }
+
+[백준 11501] [주식](https://www.acmicpc.net/problem/11501)
+
+```C++
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<cstring>
+using namespace std;
+int N;
+//투자액수, 주식수, 고점일, 차익실현
+long long invest, cnt, flag, dif;
+long long day[1000000];//그날 가격
+vector<int> price;
+long long last[1000000];//마지막 고점일
+
+int main(void) {
+	int T;
+	cin >> T;
+	while (T--) {
+		invest = cnt = flag = dif = 0;
+		memset(last, 0, sizeof(last));
+		memset(day, 0, sizeof(day));
+		cin >> N;
+		for (int i = 0; i < N; i++) {
+			//그 날의 가격 입력 후 현재 날짜, 가격 추가
+			cin >> day[i];
+			last[day[i]] = i;
+			price.push_back(day[i]);
+		}
+		//내림차순 정렬
+		sort(price.begin(), price.end(), greater<>());
+
+		long long pointPrice = price[flag];
+		long long pointDay = last[pointPrice];
+		for (int i = 0; i < N; i++) {
+
+			if (i < pointDay) {
+				invest += day[i];
+				cnt++;
+			}
+			else if (i == pointDay) {
+				dif += cnt * day[i] - invest;
+				invest = cnt = 0;
+				while (flag < price.size() && i >= pointDay) {
+					flag++;
+					if (flag >= price.size()) break;
+					pointPrice = price[flag];
+					pointDay = last[pointPrice];
+				}
+			}
+		}
+
+		price.clear();
+
+		cout << dif << "\n";
+	}
+	return 0;
+}
+```
