@@ -85,8 +85,9 @@ sort 정렬의 시간 복잡도는 O(NlogN)입니다.
 
 여기서 가장 중요한 데이터의 정렬 기준은 "**동전의 크기**"입니다.
 
-**정답 코드**
+**정답 코드**  
 
+C++ 코드
 ```C++
 #include<iostream>
 
@@ -113,6 +114,22 @@ int main(void) {
 
     return 0;
 }
+```
+
+파이썬 코드
+```python
+n,k = map(int, input().split())
+arr=[]
+
+for _ in range(n):
+    arr.append(int(input()))
+
+count=0
+for i in range(n-1,-1,-1):
+    count += k//arr[i]
+    k %= arr[i]
+
+print(count)
 ```
 
 #### 예제2: [백준 1931] [회의실 배정](https://www.acmicpc.net/problem/1931)
