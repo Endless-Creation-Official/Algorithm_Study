@@ -132,8 +132,9 @@ int main(void) {
 
 여기서 가장 중요한 데이터 정렬 기준은 "**끝나는 시간**"입니다.
 
-**정답 코드**
+**정답 코드**  
 
+C++ 코드
 ```C++
 #include<iostream>
 #include<algorithm>
@@ -173,6 +174,28 @@ int main(void) {
 	cout << ans;
 	return 0;
 }
+```  
+
+python 코드
+```python
+n = int(input())
+arr = []
+
+for i in range(n):
+    arr.append(list(map(int,input().split())))
+
+# 끝나는 시간을 기준으로 오름차순 정렬하고, 끝나는 시간이 같다면 시작하는 시간을 기준으로 오름차순 정렬
+# 끝나는 시간이 같을 경우, 시작하는 시간을 기준으로 정렬해야하는 이유 : (2,2),(1,2) <- 이런 경우 때문
+arr.sort(key=lambda x : (x[1],x[0]))
+
+count = 0
+end = 0
+for i in arr:
+    if end <= i[0]:
+        count += 1
+        end = i[1]
+
+print(count)
 ```
 
 두 예제문제에서 알 수 있듯 그리디는 데이터의 정렬 기준이 정말 중요합니다.
