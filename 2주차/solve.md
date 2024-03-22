@@ -58,8 +58,9 @@ int main(void) {
   
 
 
-[백준 1931] [회의실 배정](https://www.acmicpc.net/problem/1931)
+[백준 1931] [회의실 배정](https://www.acmicpc.net/problem/1931)  
 
+C++ 코드  
 ```C++
 #include<iostream>
 #include<algorithm>
@@ -99,7 +100,39 @@ int main(void) {
 	cout << ans;
 	return 0;
 }
-```  
+```
+
+```python
+import sys
+input = sys.stdin.readline
+
+t = int(input())
+
+for _ in range(t):
+	n =  int(input())
+	arr = list(map(int, input().split()))
+
+	# 시간초과 코드
+	# buy = []
+	# count = 0
+	# for i in range(len(arr)):
+	# 	if arr[i] == max(arr[i:len(arr)]):
+	# 		for j in buy:
+	# 			count += arr[i] - j
+	# 		buy = []
+	# 	else:
+	# 		buy.append(arr[i])
+	# print(count)
+
+	m = arr[-1]
+	count = 0
+	for i in range(n-2,-1,-1):
+		if arr[i] <= m:
+			count += m - arr[i]
+		else:
+			m = arr[i]
+	print(count)
+```
 
 [백준 11501] [주식](https://www.acmicpc.net/problem/11501)  
 기본 풀이
@@ -161,6 +194,24 @@ int main(void) {
 	return 0;
 }
 ```
+
+파이썬 코드  
+```python
+t = int(input())
+
+for _ in range(t):
+	n =  int(input())
+	arr = list(map(int, input().split()))
+	m = arr[-1]
+	count = 0
+	for i in range(n-2,-1,-1):
+		if arr[i] <= m:
+			count += m - arr[i]
+		else:
+			m = arr[i]
+	print(count)
+```
+
 역순으로 해결
 ```C++
 #include<iostream>
