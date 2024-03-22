@@ -28,6 +28,7 @@ int main(void) {
 
 [백준 11047] [동전 0](https://www.acmicpc.net/problem/11047)
 
+C++ 코드
 ```C++
 #include<iostream>
 
@@ -72,9 +73,7 @@ for i in range(n-1,-1,-1):
 print(count)
 ```
 
-  
-  
-
+<br/>
 
 [백준 1931] [회의실 배정](https://www.acmicpc.net/problem/1931)  
 
@@ -141,9 +140,11 @@ for i in arr:
 print(count)
 ```
 
+<br/>
 
 [백준 11501] [주식](https://www.acmicpc.net/problem/11501)  
-기본 풀이
+
+C++ 코드
 
 ```C++
 #include<iostream>
@@ -248,8 +249,12 @@ for _ in range(t):
 			m = arr[i]
 	print(count)
 ```
+
+<br/>
  
 [백준 11399] [ATM](https://www.acmicpc.net/problem/11399)
+
+C++ 코드
 ```C++
 #include<iostream>
 #include<algorithm>
@@ -273,4 +278,22 @@ int main(void) {
 	cout << ans;
 	return 0;
 }
+```
+
+파이썬 코드
+```python
+n=int(input())
+a=input().split()
+
+for i in range(n):
+    a[i]=int(a[i])
+
+a=sorted(a)
+
+c=0
+for i in range(n):
+    b=a[i]*(n-i)
+    c=c+b
+
+print(c)
 ```
