@@ -54,7 +54,25 @@ int main(void) {
 
     return 0;
 }
-```  
+```
+
+파이썬 코드  
+```python
+n,k = map(int, input().split())
+arr=[]
+
+for _ in range(n):
+    arr.append(int(input()))
+
+count=0
+for i in range(n-1,-1,-1):
+    count += k//arr[i]
+    k %= arr[i]
+
+print(count)
+```
+
+  
   
 
 
@@ -185,22 +203,6 @@ int main(void) {
 }
 ```
 
-파이썬 코드  
-```python
-t = int(input())
-
-for _ in range(t):
-	n =  int(input())
-	arr = list(map(int, input().split()))
-	m = arr[-1]
-	count = 0
-	for i in range(n-2,-1,-1):
-		if arr[i] <= m:
-			count += m - arr[i]
-		else:
-			m = arr[i]
-	print(count)
-```
 
 역순으로 해결
 ```C++
@@ -230,7 +232,23 @@ int main(void) {
 }
 ```
 
+파이썬 코드  
+```python
+t = int(input())
 
+for _ in range(t):
+	n =  int(input())
+	arr = list(map(int, input().split()))
+	m = arr[-1]
+	count = 0
+	for i in range(n-2,-1,-1):
+		if arr[i] <= m:
+			count += m - arr[i]
+		else:
+			m = arr[i]
+	print(count)
+```
+ 
 [백준 11399] [ATM](https://www.acmicpc.net/problem/11399)
 ```C++
 #include<iostream>
