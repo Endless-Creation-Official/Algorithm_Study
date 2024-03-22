@@ -102,37 +102,27 @@ int main(void) {
 }
 ```
 
+
+파이썬 코드  
 ```python
-import sys
-input = sys.stdin.readline
+n = int(input())
+arr = []
 
-t = int(input())
+for i in range(n):
+    arr.append(list(map(int,input().split())))
 
-for _ in range(t):
-	n =  int(input())
-	arr = list(map(int, input().split()))
+arr.sort(key=lambda x : (x[1],x[0]))
 
-	# 시간초과 코드
-	# buy = []
-	# count = 0
-	# for i in range(len(arr)):
-	# 	if arr[i] == max(arr[i:len(arr)]):
-	# 		for j in buy:
-	# 			count += arr[i] - j
-	# 		buy = []
-	# 	else:
-	# 		buy.append(arr[i])
-	# print(count)
+count = 0
+end = 0
+for i in arr:
+    if end <= i[0]:
+        count += 1
+        end = i[1]
 
-	m = arr[-1]
-	count = 0
-	for i in range(n-2,-1,-1):
-		if arr[i] <= m:
-			count += m - arr[i]
-		else:
-			m = arr[i]
-	print(count)
+print(count)
 ```
+
 
 [백준 11501] [주식](https://www.acmicpc.net/problem/11501)  
 기본 풀이
