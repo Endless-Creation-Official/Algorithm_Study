@@ -1,3 +1,31 @@
+```C++
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+long long day[1000000];
+long long N, m, invest, ans;
+
+int main(void) {
+	int T;
+	cin >> T;
+	while (T--) {
+		cin >> N;
+		m = invest = ans = 0;
+		for (int i = 0; i < N; i++) cin >> day[i];
+		for (int i = N - 1; i >= 0; i--) {
+			if (m < day[i]) m = day[i];
+			else {
+				ans += m - day[i];
+			}
+		}
+		cout << ans << "\n";
+	}
+}
+```
+
+
 [백준 11047] [동전 0](https://www.acmicpc.net/problem/11047)
 
 ```C++
@@ -73,7 +101,8 @@ int main(void) {
 }
 ```  
 
-[백준 11501] [주식](https://www.acmicpc.net/problem/11501)
+[백준 11501] [주식](https://www.acmicpc.net/problem/11501)  
+기본 풀이
 
 ```C++
 #include<iostream>
@@ -132,9 +161,36 @@ int main(void) {
 	return 0;
 }
 ```
+역순으로 해결
+```C++
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+long long day[1000000];
+long long N, m, invest, ans;
+
+int main(void) {
+	int T;
+	cin >> T;
+	while (T--) {
+		cin >> N;
+		m = invest = ans = 0;
+		for (int i = 0; i < N; i++) cin >> day[i];
+		for (int i = N - 1; i >= 0; i--) {
+			if (m < day[i]) m = day[i];
+			else {
+				ans += m - day[i];
+			}
+		}
+		cout << ans << "\n";
+	}
+}
+```
 
 
-[백준 11501] [ATM](https://www.acmicpc.net/problem/11399)
+[백준 11399] [ATM](https://www.acmicpc.net/problem/11399)
 ```C++
 #include<iostream>
 #include<algorithm>
