@@ -29,6 +29,25 @@ int main(void) {
 }
 ```
 
+</br>
+
+python 코드
+```python
+from collections import deque
+
+n = int(input())
+q = deque([x for x in range(1,n+1)])
+
+while len(q) != 1:
+    q.popleft()
+    if len(q) == 1:
+        break
+    i = q.popleft()
+    q.append(i)
+
+print(q[0])
+```
+
 [백준 10773] [제로](https://www.acmicpc.net/problem/10773)
 
 C++ 코드
@@ -59,5 +78,23 @@ int main(void) {
 	}
 	cout << sum;
 }
-```  
+```
+
+</br>
+
+python 코드
+```python
+n = int(input())
+
+stack = []
+
+for _ in range(n):
+    a = int(input())
+    if a != 0:
+        stack.append(a)
+    elif stack:
+        stack.pop(-1)
+
+print(sum(stack))
+```
 
